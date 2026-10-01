@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="messageListHighlightCornerRadius">16dp</dimen>
+    <dimen name="messageListHighlightHorizontalInset">8dp</dimen>
+    <dimen name="messageListHighlightVerticalInset">2dp</dimen>
+
     <style name="PreferenceThemeOverlay.Grouped" parent="PreferenceThemeOverlay">
         <item name="checkBoxPreferenceStyle">@style/Preference.CheckBoxPreference.Grouped</item>
         <item name="switchPreferenceStyle">@style/Preference.SwitchPreference.Grouped</item>

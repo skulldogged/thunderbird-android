@@ -308,7 +308,7 @@ class MessageListSwipeCallback(
         swipeActionConfig: SwipeActionConfig,
         swipeThresholdReached: Boolean,
     ) = if (swipeThresholdReached) {
-        swipeActionConfig.backgroundColor
+        swipeActionConfig.activeForegroundColor
     } else {
         swipeActionConfig.foregroundColor
     }
@@ -317,7 +317,7 @@ class MessageListSwipeCallback(
         swipeActionConfig: SwipeActionConfig,
         swipeThresholdReached: Boolean,
     ) = if (swipeThresholdReached) {
-        swipeActionConfig.foregroundColor
+        swipeActionConfig.activeBackgroundColor
     } else {
         swipeActionConfig.backgroundColor
     }
@@ -412,8 +412,10 @@ private data class SwipeActionConfig(
     val actionName: String,
     val actionNameToggled: String? = null,
 ) {
-    val foregroundColor = colorRoles.accent
-    val backgroundColor = colorRoles.onAccent
+    val foregroundColor = colorRoles.onAccentContainer
+    val backgroundColor = colorRoles.accentContainer
+    val activeForegroundColor = colorRoles.onAccent
+    val activeBackgroundColor = colorRoles.accent
 }
 
 private fun ViewHolder.markAsSwiped(value: Boolean) {

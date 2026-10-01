@@ -37,10 +37,10 @@ data class MessageViewHolderColors(
     companion object Companion {
         fun resolveColors(theme: Theme): MessageViewHolderColors {
             return MessageViewHolderColors(
-                active = theme.resolveColorAttribute(MaterialR.attr.colorOnSecondaryContainer),
-                activeBackground = theme.resolveColorAttribute(MaterialR.attr.colorSecondaryContainer),
-                selected = theme.resolveColorAttribute(MaterialR.attr.colorOnSurfaceVariant),
-                selectedBackground = theme.resolveColorAttribute(MaterialR.attr.colorSurfaceVariant),
+                active = theme.resolveColorAttribute(MaterialR.attr.colorOnSurface),
+                activeBackground = theme.resolveColorAttribute(MaterialR.attr.colorSurfaceContainerHighest),
+                selected = theme.resolveColorAttribute(MaterialR.attr.colorOnSecondaryContainer),
+                selectedBackground = theme.resolveColorAttribute(MaterialR.attr.colorSecondaryContainer),
                 regular = theme.resolveColorAttribute(MaterialR.attr.colorOnSurface),
                 regularBackground = theme.resolveColorAttribute(Theme2R.attr.colorContainerBackground),
                 read = theme.resolveColorAttribute(MaterialR.attr.colorOutline),
@@ -48,8 +48,8 @@ data class MessageViewHolderColors(
                 unread = theme.resolveColorAttribute(MaterialR.attr.colorOnSurface),
                 unreadBackground = theme.resolveColorAttribute(Theme2R.attr.colorContainerBackground),
                 previewText = theme.resolveColorAttribute(MaterialR.attr.colorOutline),
-                previewActiveText = theme.resolveColorAttribute(MaterialR.attr.colorOnSecondary),
-                previewSelectedText = theme.resolveColorAttribute(MaterialR.attr.colorOnSurfaceVariant),
+                previewActiveText = theme.resolveColorAttribute(MaterialR.attr.colorOnSurfaceVariant),
+                previewSelectedText = theme.resolveColorAttribute(MaterialR.attr.colorOnSecondaryContainer),
             )
         }
     }

@@ -1,8 +1,10 @@
 package com.fsck.k9.ui.messagelist.item
 
+import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.InsetDrawable
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.AbsoluteSizeSpan
@@ -26,6 +28,8 @@ import com.fsck.k9.mail.Address
 import com.fsck.k9.ui.R
 import com.fsck.k9.ui.messagelist.MessageListAppearance
 import com.fsck.k9.ui.messagelist.MessageListItem
+import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.ShapeAppearanceModel
 import com.google.android.material.textview.MaterialTextView
 import java.util.Locale
 import kotlin.math.max
@@ -45,6 +49,20 @@ class MessageViewHolder(
     var uniqueId: Long = -1L
 
     val selectedView: View = view.findViewById(R.id.selected)
+
+    // Selected and active rows are highlighted with an inset, rounded shape
+    private val highlightShape = MaterialShapeDrawable(
+        ShapeAppearanceModel.builder()
+            .setAllCornerSizes(res.getDimension(R.dimen.messageListHighlightCornerRadius))
+            .build(),
+    )
+    private val highlightBackground = InsetDrawable(
+        highlightShape,
+        res.getDimensionPixelSize(R.dimen.messageListHighlightHorizontalInset),
+        res.getDimensionPixelSize(R.dimen.messageListHighlightVerticalInset),
+        res.getDimensionPixelSize(R.dimen.messageListHighlightHorizontalInset),
+        res.getDimensionPixelSize(R.dimen.messageListHighlightVerticalInset),
+    )
     val contactPictureView: ImageView = view.findViewById(R.id.contact_picture)
     val contactPictureClickArea: View = view.findViewById(R.id.contact_picture_click_area)
     val subjectView: MaterialTextView = view.findViewById(R.id.subject)
@@ -111,7 +129,7 @@ class MessageViewHolder(
             if (appearance.showContactPicture && contactPictureView.isVisible) {
                 setContactPicture(contactPictureView, displayAddress)
             }
-            itemView.setBackgroundColor(selectBackgroundColor(isSelected, isRead, isActive))
+            setRowBackground(isSelected, isRead, isActive)
             updateWithThreadCount(displayThreadCount)
             val beforePreviewText = if (appearance.senderAboveSubject) subject else displayName
             val messageStringBuilder = SpannableStringBuilder(beforePreviewText)
@@ -239,6 +257,16 @@ class MessageViewHolder(
             read -> colors.read
             !read -> colors.unread
             else -> colors.regular
+        }
+    }
+
+    private fun setRowBackground(selected: Boolean, read: Boolean, active: Boolean) {
+        val color = selectBackgroundColor(selected, read, active)
+        if (selected || active) {
+            highlightShape.fillColor = ColorStateList.valueOf(color)
+            itemView.background = highlightBackground
+        } else {
+            itemView.setBackgroundColor(color)
         }
     }
 
