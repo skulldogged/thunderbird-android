@@ -35,13 +35,11 @@
             tools:listitem="@layout/accounts_item"
             />
 
-        <ProgressBar
+        <com.google.android.material.loadingindicator.LoadingIndicator
             android:id="@android:id/empty"
-            style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:indeterminate="true"
             android:visibility="gone"
             />
 

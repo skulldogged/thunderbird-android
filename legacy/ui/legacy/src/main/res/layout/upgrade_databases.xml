@@ -30,9 +30,8 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
-        <ProgressBar
+        <com.google.android.material.loadingindicator.LoadingIndicator
             android:id="@+id/databaseUpgradeProgress"
-            style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />

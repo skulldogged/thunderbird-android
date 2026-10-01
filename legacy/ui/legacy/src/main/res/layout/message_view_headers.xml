@@ -30,13 +30,11 @@
 
     </ScrollView>
 
-    <ProgressBar
+    <com.google.android.material.loadingindicator.LoadingIndicator
         android:id="@+id/message_headers_loading"
-        style="?attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:indeterminate="true"
         android:visibility="gone"
         tools:visibility="gone"
         />

@@ -71,6 +71,8 @@ import com.fsck.k9.ui.messagelist.MessageListFragmentBridgeContract.MessageListF
 import com.fsck.k9.ui.messagelist.MessageListFragmentBridgeContract.MessageListFragmentListener.Companion.MAX_PROGRESS
 import com.fsck.k9.ui.messagelist.debug.AuthDebugActions
 import com.fsck.k9.ui.messagelist.item.MessageViewHolder
+import com.google.android.material.R as MaterialR
+import com.google.android.material.color.MaterialColors
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
 import com.google.android.material.snackbar.Snackbar
@@ -497,6 +499,13 @@ class LegacyMessageListFragment :
         } else if (isCheckMailSupported) {
             swipeRefreshLayout.setOnRefreshListener { checkMail() }
         }
+
+        swipeRefreshLayout.setColorSchemeColors(
+            MaterialColors.getColor(swipeRefreshLayout, androidx.appcompat.R.attr.colorPrimary),
+        )
+        swipeRefreshLayout.setProgressBackgroundColorSchemeColor(
+            MaterialColors.getColor(swipeRefreshLayout, MaterialR.attr.colorSurfaceContainerHigh),
+        )
 
         // Disable pull-to-refresh until the message list has been loaded
         swipeRefreshLayout.isEnabled = false

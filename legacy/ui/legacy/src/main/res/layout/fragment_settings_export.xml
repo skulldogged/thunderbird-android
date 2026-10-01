@@ -65,12 +65,10 @@
             app:constraint_referenced_ids="exportButton,shareButton"
             />
 
-        <ProgressBar
+        <com.google.android.material.loadingindicator.LoadingIndicator
             android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:indeterminate="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/exportButton"
             app:layout_constraintEnd_toEndOf="@+id/exportButton"

@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.widget.PopupMenu
@@ -90,7 +89,7 @@ class MessageDetailsFragment : ToolbarBottomSheetDialogFragment() {
             }
         }
 
-        val progressBar = view.findViewById<ProgressBar>(R.id.message_details_progress)
+        val progressBar = view.findViewById<View>(R.id.message_details_progress)
         val errorView = view.findViewById<View>(R.id.message_details_error)
         val recyclerView = view.findViewById<RecyclerView>(R.id.message_details_list)
 
