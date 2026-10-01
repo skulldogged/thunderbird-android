@@ -573,6 +573,7 @@ class LegacyMessageListFragment :
 
         recyclerView.layoutManager = LinearLayoutManager()
         recyclerView.itemAnimator = MessageListItemAnimator()
+        recyclerView.addOnScrollListener(ShrinkFloatingActionButtonOnScroll())
 
         val itemTouchHelper = ItemTouchHelper(
             MessageListSwipeCallback(
@@ -2733,6 +2734,20 @@ class LegacyMessageListFragment :
                     ARG_IS_THREAD_DISPLAY to isThreadDisplay,
                     ARG_THREADED_LIST to threadedList,
                 )
+            }
+        }
+    }
+
+    /**
+     * Shrinks the compose button to its icon while scrolling down and extends it again when scrolling up.
+     */
+    private inner class ShrinkFloatingActionButtonOnScroll : RecyclerView.OnScrollListener() {
+        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            val floatingActionButton = floatingActionButton ?: return
+            if (dy > 0 && floatingActionButton.isExtended) {
+                floatingActionButton.shrink()
+            } else if (dy < 0 && !floatingActionButton.isExtended) {
+                floatingActionButton.extend()
             }
         }
     }
