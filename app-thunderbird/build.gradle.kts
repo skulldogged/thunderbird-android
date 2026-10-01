@@ -211,6 +211,12 @@ androidComponents {
         variant.packaging.resources.excludes.addAll(
             "META-INF/*.version",
         )
+
+        // Personal builds replace the store release on the device, so keep their version code above the store's.
+        // Otherwise store updates would overwrite them, and installing them over the store release is a downgrade.
+        variant.outputs.forEach { output ->
+            output.versionCode.set(1_000_000 + (output.versionCode.orNull ?: 0))
+        }
     }
 }
 
