@@ -47,6 +47,7 @@ private val USED_LIBRARIES = persistentListOf(
     Library("FlexboxLayout", "https://github.com/google/flexbox-layout", "Apache License, Version 2.0"),
     Library("FastAdapter", "https://github.com/mikepenz/FastAdapter", "Apache License, Version 2.0"),
     Library("Glide", "https://github.com/bumptech/glide", "BSD, part MIT and Apache 2.0"),
+    Library("Google Sans Flex", "https://github.com/googlefonts/googlesans-flex", "SIL Open Font License 1.1"),
     Library("jsoup", "https://jsoup.org/", "MIT License"),
     Library("jutf7", "http://jutf7.sourceforge.net/", "MIT License"),
     Library("JZlib", "http://www.jcraft.com/jzlib/", "BSD-style License"),

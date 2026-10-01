@@ -10,6 +10,5 @@
 
     <style name="Widget.App.ActionMode.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:textColor">?attr/colorOnSurface</item>
-        <item name="android:background">?attr/colorSurfaceContainer</item>
     </style>
 </resources>

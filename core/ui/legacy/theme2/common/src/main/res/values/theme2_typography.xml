@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Theme2.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">@font/theme2_sans_medium</item>
+        <item name="fontFamily">@font/theme2_sans_medium</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:fontFamily">@font/theme2_sans_medium</item>
+        <item name="fontFamily">@font/theme2_sans_medium</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/theme2_sans_medium</item>
+        <item name="fontFamily">@font/theme2_sans_medium</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:fontFamily">@font/theme2_sans_medium</item>
+        <item name="fontFamily">@font/theme2_sans_medium</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/theme2_sans_medium</item>
+        <item name="fontFamily">@font/theme2_sans_medium</item>
+    </style>
+
+    <!-- Platform text appearances used by older layouts -->
+    <style name="TextAppearance.Theme2.Default" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.Small" parent="@android:style/TextAppearance.Material.Small">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.Medium" parent="@android:style/TextAppearance.Material.Medium">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+    <style name="TextAppearance.Theme2.Large" parent="@android:style/TextAppearance.Material.Large">
+        <item name="android:fontFamily">@font/theme2_sans</item>
+        <item name="fontFamily">@font/theme2_sans</item>
+    </style>
+
+</resources>

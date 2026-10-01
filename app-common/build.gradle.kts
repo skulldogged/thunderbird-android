@@ -38,6 +38,7 @@ dependencies {
     implementation(projects.core.ui.setting.api)
     implementation(projects.core.ui.setting.implDialog)
     implementation(projects.core.ui.legacy.theme2.common)
+    implementation(libs.jetbrains.compose.material3)
 
     implementation(projects.feature.account.avatar.api)
     implementation(projects.feature.account.avatar.impl)
