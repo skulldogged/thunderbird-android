@@ -31,6 +31,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
+import androidx.core.view.marginBottom
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
@@ -299,6 +300,34 @@ class MessageViewFragment :
 
         messageTopView.setOnDownloadButtonClickListener {
             onDownloadButtonClicked()
+        }
+
+        initializeReplyToolbar(messageTopView)
+    }
+
+    private fun initializeReplyToolbar(messageTopView: MessageTopView) {
+        val replyToolbar = messageTopView.findViewById<View>(R.id.message_reply_toolbar)
+
+        messageTopView.findViewById<View>(R.id.message_reply_toolbar_reply).setOnClickListener {
+            if (message != null) onReply(forceReplyAction = true)
+        }
+        messageTopView.findViewById<View>(R.id.message_reply_toolbar_reply_all).setOnClickListener {
+            if (message != null) onReplyAll()
+        }
+        messageTopView.findViewById<View>(R.id.message_reply_toolbar_forward).setOnClickListener {
+            if (message != null) onForward()
+        }
+
+        // Slide the toolbar out of the way while scrolling down through the message
+        var isReplyToolbarHidden = false
+        val scrollView = messageTopView.findViewById<View>(R.id.message_scrollview)
+        scrollView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+            val hide = scrollY > oldScrollY
+            if (hide != isReplyToolbarHidden) {
+                isReplyToolbarHidden = hide
+                val hiddenOffset = (replyToolbar.height + replyToolbar.marginBottom).toFloat()
+                replyToolbar.animate().translationY(if (hide) hiddenOffset else 0f)
+            }
         }
     }
 

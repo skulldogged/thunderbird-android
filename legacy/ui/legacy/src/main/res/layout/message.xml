@@ -32,6 +32,7 @@ the 'message view theme' setting).
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:paddingBottom="@dimen/messageViewReplyToolbarSpacing"
             >
 
             <!-- Header area -->
@@ -119,6 +120,52 @@ the 'message view theme' setting).
         </LinearLayout>
 
     </com.fsck.k9.view.NonLockingScrollView>
+
+    <com.google.android.material.floatingtoolbar.FloatingToolbarLayout
+        android:id="@+id/message_reply_toolbar"
+        style="@style/Widget.Material3.FloatingToolbar.Vibrant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="16dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/message_reply_toolbar_reply"
+                style="@style/Widget.Material3.FloatingToolbar.IconButton.Vibrant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/reply_action"
+                app:icon="@drawable/ic_reply"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/message_reply_toolbar_reply_all"
+                style="@style/Widget.Material3.FloatingToolbar.IconButton.Vibrant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/reply_all_action"
+                app:icon="@drawable/ic_reply_all"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/message_reply_toolbar_forward"
+                style="@style/Widget.Material3.FloatingToolbar.IconButton.Vibrant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/forward_action"
+                app:icon="@drawable/ic_forward"
+                />
+
+        </LinearLayout>
+
+    </com.google.android.material.floatingtoolbar.FloatingToolbarLayout>
 
     </app.k9mail.core.ui.legacy.designsystem.atom.container.ContainerLayout>
 
