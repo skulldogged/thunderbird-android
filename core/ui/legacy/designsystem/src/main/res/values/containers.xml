@@ -7,4 +7,12 @@
     </declare-styleable>
 
     <dimen name="container_corner_radius">28dp</dimen>
+
+    <item type="id" name="grouped_list_background" />
+
+    <dimen name="grouped_list_horizontal_margin">16dp</dimen>
+    <dimen name="grouped_list_item_gap">2dp</dimen>
+    <dimen name="grouped_list_edge_spacing">8dp</dimen>
+    <dimen name="grouped_list_outer_corner_radius">20dp</dimen>
+    <dimen name="grouped_list_inner_corner_radius">4dp</dimen>
 </resources>

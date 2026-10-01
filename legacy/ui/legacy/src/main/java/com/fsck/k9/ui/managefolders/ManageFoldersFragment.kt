@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import app.k9mail.core.ui.legacy.designsystem.atom.container.GroupedListDecoration
 import app.k9mail.legacy.ui.folder.DisplayFolder
 import app.k9mail.legacy.ui.folder.FolderIconProvider
 import app.k9mail.legacy.ui.folder.FolderNameFormatter
@@ -101,6 +102,7 @@ class ManageFoldersFragment : Fragment() {
 
         val recyclerView = requireView().findViewById<RecyclerView>(R.id.folderList)
         recyclerView.adapter = folderListAdapter
+        recyclerView.addItemDecoration(GroupedListDecoration(requireContext()) { false })
     }
 
     private fun updateFolderList(displayFolders: List<DisplayFolder>) {

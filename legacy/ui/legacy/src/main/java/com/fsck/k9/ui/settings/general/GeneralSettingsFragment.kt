@@ -19,6 +19,7 @@ import com.fsck.k9.ui.BuildConfig
 import com.fsck.k9.ui.R
 import com.fsck.k9.ui.base.extensions.withArguments
 import com.fsck.k9.ui.observe
+import com.fsck.k9.ui.settings.applyGroupedPreferenceStyle
 import com.fsck.k9.ui.settings.notificationactions.NotificationActionsSettingsActivity
 import com.fsck.k9.ui.settings.remove
 import com.google.android.material.snackbar.Snackbar
@@ -133,6 +134,7 @@ class GeneralSettingsFragment : PreferenceFragmentCompat() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        applyGroupedPreferenceStyle()
         activity?.title = preferenceScreen.title
 
         val menuHost = requireActivity()

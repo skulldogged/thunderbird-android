@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import app.k9mail.core.ui.legacy.designsystem.atom.container.GroupedListDecoration
 import app.k9mail.core.ui.legacy.designsystem.atom.icon.Icons
 import app.k9mail.feature.launcher.FeatureLauncherActivity
 import app.k9mail.feature.launcher.FeatureLauncherTarget
@@ -77,6 +78,11 @@ class SettingsListFragment : Fragment(), ItemTouchCallback {
 
         recyclerView.adapter = settingsListAdapter
         recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.addItemDecoration(
+            GroupedListDecoration(requireContext()) { position ->
+                settingsListAdapter.getItemViewType(position) == R.id.settings_list_header_item
+            },
+        )
         touchHelper.attachToRecyclerView(recyclerView)
     }
 

@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
+import app.k9mail.core.ui.legacy.designsystem.atom.container.GroupedListDecoration
 import app.k9mail.core.ui.legacy.designsystem.atom.icon.Icons
 import app.k9mail.legacy.message.controller.MessageReference
 import app.k9mail.legacy.ui.folder.DisplayFolder
@@ -108,6 +109,7 @@ class ChooseFolderActivity : BaseActivity() {
 
         recyclerView = findViewById(R.id.folderList)
         recyclerView.adapter = folderListAdapter
+        recyclerView.addItemDecoration(GroupedListDecoration(this) { false })
     }
 
     private fun updateFolderList(displayFolders: List<DisplayFolder>) {

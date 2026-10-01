@@ -15,6 +15,7 @@ import com.fsck.k9.fragment.ConfirmationDialogFragment
 import com.fsck.k9.fragment.ConfirmationDialogFragment.ConfirmationDialogFragmentListener
 import com.fsck.k9.ui.R
 import com.fsck.k9.ui.base.livedata.observeNotNull
+import com.fsck.k9.ui.settings.applyGroupedPreferenceStyle
 import com.takisoft.preferencex.PreferenceFragmentCompat
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -31,6 +32,7 @@ class FolderSettingsFragment : PreferenceFragmentCompat(), ConfirmationDialogFra
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        applyGroupedPreferenceStyle()
 
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(

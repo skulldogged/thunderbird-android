@@ -8,7 +8,7 @@
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
 
         <!-- Legacy styles -->
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Grouped</item>
 
         <item name="iconStarColor">#fbbc04</item>
 
@@ -45,7 +45,7 @@
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
 
         <!-- Legacy styles -->
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Grouped</item>
 
         <item name="iconStarColor">#fdd663</item>
 

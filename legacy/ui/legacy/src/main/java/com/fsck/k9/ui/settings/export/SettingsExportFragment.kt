@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import app.k9mail.core.android.common.activity.CreateDocumentResultContract
+import app.k9mail.core.ui.legacy.designsystem.atom.container.GroupedListDecoration
 import com.fsck.k9.ui.R
 import com.fsck.k9.ui.base.livedata.observeNotNull
 import com.google.android.material.textview.MaterialTextView
@@ -70,6 +71,7 @@ class SettingsExportFragment : Fragment() {
         }
 
         recyclerView.adapter = settingsExportAdapter
+        recyclerView.addItemDecoration(GroupedListDecoration(requireContext()) { false })
     }
 
     private fun ViewHolder.updateUi(model: SettingsExportUiModel) {

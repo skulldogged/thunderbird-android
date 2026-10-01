@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SwitchPreference looks up android.R.id.switch_widget by its value on all API levels -->
+<com.google.android.material.materialswitch.MaterialSwitch
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/switch_widget"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:clickable="false"
+    android:focusable="false"
+    tools:ignore="NewApi"
+    />

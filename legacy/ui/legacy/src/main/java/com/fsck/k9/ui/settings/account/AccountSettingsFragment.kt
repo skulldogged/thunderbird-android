@@ -34,6 +34,7 @@ import com.fsck.k9.notification.NotificationSettingsUpdater
 import com.fsck.k9.ui.R
 import com.fsck.k9.ui.base.extensions.withArguments
 import com.fsck.k9.ui.endtoend.AutocryptKeyTransferActivity
+import com.fsck.k9.ui.settings.applyGroupedPreferenceStyle
 import com.fsck.k9.ui.settings.onClick
 import com.fsck.k9.ui.settings.oneTimeClickListener
 import com.fsck.k9.ui.settings.remove
@@ -120,6 +121,7 @@ class AccountSettingsFragment : PreferenceFragmentCompat(), ConfirmationDialogFr
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        applyGroupedPreferenceStyle()
 
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(
