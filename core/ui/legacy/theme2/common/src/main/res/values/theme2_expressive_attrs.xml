@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Theme2Expressive">
+        <!-- Tinted background behind app bars and content containers -->
+        <attr name="colorScreenBackground" format="color" />
+        <!-- Background of rounded content containers (lists, cards, preference groups) -->
+        <attr name="colorContainerBackground" format="color" />
+    </declare-styleable>
+</resources>

@@ -71,7 +71,7 @@ import com.fsck.k9.ui.messagelist.MessageListFragmentBridgeContract.MessageListF
 import com.fsck.k9.ui.messagelist.MessageListFragmentBridgeContract.MessageListFragmentListener.Companion.MAX_PROGRESS
 import com.fsck.k9.ui.messagelist.debug.AuthDebugActions
 import com.fsck.k9.ui.messagelist.item.MessageViewHolder
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textview.MaterialTextView
@@ -204,7 +204,7 @@ class LegacyMessageListFragment :
     private var recyclerView: RecyclerView? = null
     private var itemTouchHelper: ItemTouchHelper? = null
     private var swipeRefreshLayout: SwipeRefreshLayout? = null
-    private var floatingActionButton: FloatingActionButton? = null
+    private var floatingActionButton: ExtendedFloatingActionButton? = null
 
     private lateinit var adapter: MessageListAdapter
 
@@ -518,7 +518,7 @@ class LegacyMessageListFragment :
     }
 
     private fun initializeFloatingActionButtonInsets(view: View) {
-        val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.floating_action_button)
+        val floatingActionButton = view.findViewById<ExtendedFloatingActionButton>(R.id.floating_action_button)
 
         ViewCompat.setOnApplyWindowInsetsListener(floatingActionButton) { v, windowInsets ->
             val insets = windowInsets.getInsets(systemBars())
@@ -536,7 +536,7 @@ class LegacyMessageListFragment :
     }
 
     private fun enableFloatingActionButton(view: View) {
-        val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.floating_action_button)
+        val floatingActionButton = view.findViewById<ExtendedFloatingActionButton>(R.id.floating_action_button)
 
         ViewCompat.setOnApplyWindowInsetsListener(floatingActionButton) { view, windowInsets ->
             val insets = windowInsets.getInsets(systemBars())
@@ -559,7 +559,7 @@ class LegacyMessageListFragment :
     }
 
     private fun disableFloatingActionButton(view: View) {
-        val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.floating_action_button)
+        val floatingActionButton = view.findViewById<ExtendedFloatingActionButton>(R.id.floating_action_button)
         floatingActionButton.isGone = true
     }
 

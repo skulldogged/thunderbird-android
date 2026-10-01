@@ -9,7 +9,7 @@ the 'composer theme' setting).
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/windowBackground"
+    android:background="?attr/colorContainerBackground"
     android:scrollbarStyle="insideOverlay"
     android:fillViewport="true"
     >
@@ -27,7 +27,6 @@ the 'composer theme' setting).
             android:layout_width="match_parent"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:background="?attr/colorSurfaceContainerLow"
             android:minHeight="50dp"
             >
 

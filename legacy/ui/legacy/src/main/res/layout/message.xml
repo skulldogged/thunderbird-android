@@ -16,11 +16,16 @@ the 'message view theme' setting).
     tools:context=".messageview.MessageViewFragment"
     >
 
+    <app.k9mail.core.ui.legacy.designsystem.atom.container.ContainerLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
     <com.fsck.k9.view.NonLockingScrollView
         android:id="@+id/message_scrollview"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         >
 
         <LinearLayout
@@ -114,6 +119,8 @@ the 'message view theme' setting).
         </LinearLayout>
 
     </com.fsck.k9.view.NonLockingScrollView>
+
+    </app.k9mail.core.ui.legacy.designsystem.atom.container.ContainerLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/download_remainder"

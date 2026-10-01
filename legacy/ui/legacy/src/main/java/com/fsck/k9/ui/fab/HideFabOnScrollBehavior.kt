@@ -8,7 +8,6 @@ import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.marginBottom
 import com.google.android.material.behavior.HideBottomViewOnScrollBehavior
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.snackbar.Snackbar.SnackbarLayout
 
@@ -21,7 +20,7 @@ import com.google.android.material.snackbar.Snackbar.SnackbarLayout
  * [guideline](https://m3.material.io/components/snackbar/guidelines) to display a `Snackbar` above the FAB.
  */
 class HideFabOnScrollBehavior(context: Context, attributes: AttributeSet) :
-    HideBottomViewOnScrollBehavior<FloatingActionButton>(context, attributes) {
+    HideBottomViewOnScrollBehavior<View>(context, attributes) {
 
     override fun onAttachedToLayoutParams(lp: CoordinatorLayout.LayoutParams) {
         if (lp.dodgeInsetEdges == Gravity.NO_GRAVITY) {
@@ -32,13 +31,13 @@ class HideFabOnScrollBehavior(context: Context, attributes: AttributeSet) :
         super.onAttachedToLayoutParams(lp)
     }
 
-    override fun layoutDependsOn(parent: CoordinatorLayout, child: FloatingActionButton, dependency: View): Boolean {
+    override fun layoutDependsOn(parent: CoordinatorLayout, child: View, dependency: View): Boolean {
         return dependency.isSnackbarLayout() || super.layoutDependsOn(parent, child, dependency)
     }
 
     override fun onDependentViewChanged(
         parent: CoordinatorLayout,
-        child: FloatingActionButton,
+        child: View,
         dependency: View,
     ): Boolean {
         if (dependency.isSnackbarLayout()) {
@@ -49,7 +48,7 @@ class HideFabOnScrollBehavior(context: Context, attributes: AttributeSet) :
         return false
     }
 
-    override fun onDependentViewRemoved(parent: CoordinatorLayout, child: FloatingActionButton, dependency: View) {
+    override fun onDependentViewRemoved(parent: CoordinatorLayout, child: View, dependency: View) {
         super.onDependentViewRemoved(parent, child, dependency)
 
         if (dependency.isSnackbarLayout()) {

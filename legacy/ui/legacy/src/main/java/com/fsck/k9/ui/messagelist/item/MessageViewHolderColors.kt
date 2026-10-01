@@ -3,6 +3,7 @@ package com.fsck.k9.ui.messagelist.item
 import android.content.res.Resources.Theme
 import androidx.annotation.ColorInt
 import com.fsck.k9.ui.resolveColorAttribute
+import app.k9mail.core.ui.legacy.theme2.common.R as Theme2R
 import com.google.android.material.R as MaterialR
 
 data class MessageViewHolderColors(
@@ -41,11 +42,11 @@ data class MessageViewHolderColors(
                 selected = theme.resolveColorAttribute(MaterialR.attr.colorOnSurfaceVariant),
                 selectedBackground = theme.resolveColorAttribute(MaterialR.attr.colorSurfaceVariant),
                 regular = theme.resolveColorAttribute(MaterialR.attr.colorOnSurface),
-                regularBackground = theme.resolveColorAttribute(MaterialR.attr.colorSurface),
+                regularBackground = theme.resolveColorAttribute(Theme2R.attr.colorContainerBackground),
                 read = theme.resolveColorAttribute(MaterialR.attr.colorOutline),
                 readBackground = theme.resolveColorAttribute(MaterialR.attr.colorSurfaceContainerHigh),
                 unread = theme.resolveColorAttribute(MaterialR.attr.colorOnSurface),
-                unreadBackground = theme.resolveColorAttribute(MaterialR.attr.colorSurface),
+                unreadBackground = theme.resolveColorAttribute(Theme2R.attr.colorContainerBackground),
                 previewText = theme.resolveColorAttribute(MaterialR.attr.colorOutline),
                 previewActiveText = theme.resolveColorAttribute(MaterialR.attr.colorOnSecondary),
                 previewSelectedText = theme.resolveColorAttribute(MaterialR.attr.colorOnSurfaceVariant),

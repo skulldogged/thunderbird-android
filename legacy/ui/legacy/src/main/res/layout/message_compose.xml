@@ -35,14 +35,21 @@
             android:layout_height="wrap_content"
             />
 
-        <ViewStub
-            android:id="@+id/message_compose_content"
+        <app.k9mail.core.ui.legacy.designsystem.atom.container.ContainerLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout="@layout/message_compose_content"
-            tools:visibility="visible"
-            />
+            >
+
+            <ViewStub
+                android:id="@+id/message_compose_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/message_compose_content"
+                tools:visibility="visible"
+                />
+
+        </app.k9mail.core.ui.legacy.designsystem.atom.container.ContainerLayout>
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

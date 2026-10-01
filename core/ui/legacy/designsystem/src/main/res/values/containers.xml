@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ContainerLayout">
+        <attr name="containerColor" format="color" />
+        <attr name="containerCornerRadius" format="dimension" />
+        <attr name="containerRoundBottom" format="boolean" />
+    </declare-styleable>
+
+    <dimen name="container_corner_radius">28dp</dimen>
+</resources>

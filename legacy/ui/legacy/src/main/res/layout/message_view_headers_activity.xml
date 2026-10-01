@@ -28,12 +28,19 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/message_headers_fragment"
+        <app.k9mail.core.ui.legacy.designsystem.atom.container.ContainerLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/message_view_headers"
-            />
+            >
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/message_headers_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/message_view_headers"
+                />
+
+        </app.k9mail.core.ui.legacy.designsystem.atom.container.ContainerLayout>
     </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

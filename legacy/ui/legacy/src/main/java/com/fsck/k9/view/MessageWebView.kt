@@ -3,6 +3,7 @@ package com.fsck.k9.view
 import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Resources
+import android.graphics.Color
 import android.util.AttributeSet
 import android.webkit.WebView
 import com.fsck.k9.core.BuildConfig
@@ -85,6 +86,9 @@ class MessageWebView : WebView, KoinComponent, ThunderbirdWebViewSettings {
         } else {
             webView.showInLightMode()
         }
+
+        // Let the surrounding message container show through instead of the WebView's default page background
+        webView.setBackgroundColor(Color.TRANSPARENT)
     }
 
     private fun disableDisplayZoomControls() {
