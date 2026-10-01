@@ -43,11 +43,11 @@ data class MessageViewHolderColors(
                 selectedBackground = theme.resolveColorAttribute(MaterialR.attr.colorSecondaryContainer),
                 regular = theme.resolveColorAttribute(MaterialR.attr.colorOnSurface),
                 regularBackground = theme.resolveColorAttribute(Theme2R.attr.colorContainerBackground),
-                read = theme.resolveColorAttribute(MaterialR.attr.colorOutline),
+                read = theme.resolveColorAttribute(MaterialR.attr.colorOnSurfaceVariant),
                 readBackground = theme.resolveColorAttribute(MaterialR.attr.colorSurfaceContainerHigh),
                 unread = theme.resolveColorAttribute(MaterialR.attr.colorOnSurface),
                 unreadBackground = theme.resolveColorAttribute(Theme2R.attr.colorContainerBackground),
-                previewText = theme.resolveColorAttribute(MaterialR.attr.colorOutline),
+                previewText = theme.resolveColorAttribute(MaterialR.attr.colorOnSurfaceVariant),
                 previewActiveText = theme.resolveColorAttribute(MaterialR.attr.colorOnSurfaceVariant),
                 previewSelectedText = theme.resolveColorAttribute(MaterialR.attr.colorOnSecondaryContainer),
             )
