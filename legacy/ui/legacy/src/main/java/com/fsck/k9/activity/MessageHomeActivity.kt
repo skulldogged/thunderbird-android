@@ -17,7 +17,9 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.view.ActionMode
+import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import androidx.fragment.app.Fragment
@@ -690,6 +692,8 @@ open class MessageHomeActivity :
         actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowTitleEnabled(false)
+
+        findViewById<View>(R.id.toolbar_search_bar).setOnClickListener { onSearchRequested() }
     }
 
     private fun initializeDrawer() {
@@ -1419,13 +1423,33 @@ open class MessageHomeActivity :
     }
 
     private fun showDefaultTitleView() {
+        updateSearchBar(isMessageListShown = true)
         if (messageListFragment != null) {
             messageListFragment!!.updateTitle()
         }
     }
 
     private fun showMessageTitleView() {
+        updateSearchBar(isMessageListShown = false)
         setActionBarTitle("")
+    }
+
+    /**
+     * The message list title is shown inside a search bar. Search results can't be searched again, so they get a
+     * plain title.
+     */
+    private fun updateSearchBar(isMessageListShown: Boolean) {
+        val isSearchAvailable = search?.isManualSearch != true
+        findViewById<View>(R.id.toolbar_search_bar).apply {
+            isVisible = isMessageListShown
+            isClickable = isSearchAvailable
+            background = if (isSearchAvailable) {
+                ContextCompat.getDrawable(context, R.drawable.toolbar_search_bar_background)
+            } else {
+                null
+            }
+        }
+        findViewById<View>(R.id.toolbar_search_bar_icon).isVisible = isSearchAvailable
     }
 
     override fun onSwitchComplete(displayedChild: Int) {

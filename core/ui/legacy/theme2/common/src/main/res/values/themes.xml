@@ -40,6 +40,7 @@
         <item name="colorScreenBackground">?attr/colorSurfaceContainer</item>
         <item name="colorContainerBackground">?attr/colorSurfaceContainerLowest</item>
         <item name="android:windowBackground">?attr/colorScreenBackground</item>
+        <item name="searchViewStyle">@style/Widget.App.SearchView</item>
         <item name="popupMenuBackground">@drawable/theme2_popup_menu_background</item>
 
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.SmallComponent</item>
@@ -78,6 +79,7 @@
         <item name="colorScreenBackground">?attr/colorSurface</item>
         <item name="colorContainerBackground">?attr/colorSurfaceContainer</item>
         <item name="android:windowBackground">?attr/colorScreenBackground</item>
+        <item name="searchViewStyle">@style/Widget.App.SearchView</item>
         <item name="popupMenuBackground">@drawable/theme2_popup_menu_background</item>
 
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.SmallComponent</item>

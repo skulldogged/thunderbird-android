@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.appbar.MaterialToolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar"
     style="?attr/toolbarStyle"
@@ -11,38 +12,64 @@
     tools:navigationIcon="@drawable/ic_arrow_back"
     >
 
-    <!-- We're not using MaterialToolbar's title/subtitle support because it is broken when using large system
-         font sizes. See https://issuetracker.google.com/issues/135865267 -->
+    <!-- Search bar shown in place of the title while the message list is displayed -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/toolbar_search_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/toolbarTitleMarginVertical"
-        android:orientation="vertical"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/toolbar_search_bar_background"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         >
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/toolbarTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:textAppearance="?attr/textAppearanceTitleLarge"
-            android:textColor="?attr/colorOnSurface"
-            tools:text="Inbox"
+        <ImageView
+            android:id="@+id/toolbar_search_bar_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/search_action"
+            app:srcCompat="@drawable/ic_search"
+            app:tint="?attr/colorOnSurfaceVariant"
             />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/toolbarSubtitle"
+        <!-- We're not using MaterialToolbar's title/subtitle support because it is broken when using large system
+             font sizes. See https://issuetracker.google.com/issues/135865267 -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:visibility="gone"
-            tools:text="demo@domain.example"
-            tools:visibility="visible"
-            />
+            android:layout_marginVertical="@dimen/toolbarTitleMarginVertical"
+            android:orientation="vertical"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="Inbox"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/toolbarSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone"
+                tools:text="demo@domain.example"
+                tools:visibility="visible"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -287,6 +287,7 @@ class LegacyMessageListFragment :
 
     override fun expandSearchView() {
         searchView?.isIconified = false
+        activity?.invalidateMenu()
     }
 
     override val isShowAccountIndicator: Boolean
@@ -1129,6 +1130,7 @@ class LegacyMessageListFragment :
 
         searchView?.let { searchView ->
             searchItem.actionView = searchView
+            showSearchItemWhileExpanded(searchItem, searchView)
             return
         }
 
@@ -1151,8 +1153,21 @@ class LegacyMessageListFragment :
 
         searchView.setQuery(initialSearchViewQuery, false)
         searchView.isIconified = initialSearchViewIconified
+        searchView.setOnCloseListener {
+            activity?.invalidateMenu()
+            false
+        }
 
         this.searchView = searchView
+        showSearchItemWhileExpanded(searchItem, searchView)
+    }
+
+    /**
+     * The search bar in the toolbar replaces the collapsed search icon, so the search item is only shown while the
+     * search view is expanded.
+     */
+    private fun showSearchItemWhileExpanded(searchItem: MenuItem, searchView: SearchView) {
+        searchItem.isVisible = !searchView.isIconified
     }
 
     private fun prepareMenu(menu: Menu) {
@@ -1218,6 +1233,7 @@ class LegacyMessageListFragment :
             searchView.setQuery(null, false)
             searchView.isIconified = true
         }
+        activity?.invalidateMenu()
     }
 
     private fun selectMenuItem(item: MenuItem): Boolean {

@@ -9,6 +9,11 @@
         <item name="titleTextAppearance">?attr/textAppearanceTitleLarge</item>
     </style>
 
+    <style name="Widget.App.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="queryBackground">@drawable/theme2_search_query_background</item>
+        <item name="submitBackground">@null</item>
+    </style>
+
     <style name="Widget.App.ActionMode.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
